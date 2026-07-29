@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Search</title>
+    <style>
+        body {
+            font-family: 'Times New Roman',serif;
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1{
+            color: #e94560;
+            font-size: 48px;
+        }
+
+        input{
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            width: 300px;
+            margin-right: 10px;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: e94560;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Times New Roman', serif;
+        }
+
+        button:hover {
+            background-color: #c73652;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>&#127916 Movie Search</h1>
+    <p>Search for any movie and get its details</p>
+    <form action="/search" method="Get">
+        <input type="text" name="query" placeholder="Search for a movie...">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
