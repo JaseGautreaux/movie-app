@@ -51,6 +51,14 @@
                 <p>⭐ Rating: {{ movie.vote_average }}/10</p>
                 <p>📅 Release date: {{ movie.release_date }}</p>
                 <p>{{ movie.overview }}</p>
+                <form action="/favorite/add" method="POST">
+                      <input type="hidden" name="title" value="{{ movie.title }}"> 
+                      <input type="hidden" name="rating" value="{{ movie.vote_average }}"> 
+                      <input type="hidden" name="overview" value="{{ movie.overview }}"> 
+                      <input type="hidden" name="poster_path" value="{{ movie.poster_path }}"> 
+                      <input type="hidden" name="tmdb_id" value="{{ movie.id }}"> 
+                      <button type="submit">&#128525 Save to Favorites</button> 
+                </form>
             </div>
         </div>
     </div>

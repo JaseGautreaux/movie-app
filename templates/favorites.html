@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Favorites</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #1a1a2e;
+            color: white;
+            padding: 50px;
+        }
+        h1 {
+            color: #e94560;
+            text-align: center;
+        }
+        .movie-card {
+            background-color: #16213e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .movie-title {
+            color: #e94560;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            color: #e94560;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a class="back btn" href="/">← Back to Search</a>
+    <h1>&#128525 My Favorites</h1>
+
+    {% if movies %}
+        {% for movie in movies %}
+        <div class="movie-card">
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                {% if movie[4] %}
+                <img src="https://image.tmdb.org/t/p/w200{{ movie[4] }}" 
+                     style="border-radius: 8px; width: 100px; flex-shrink: 0;">
+                {% endif %}
+                <div>
+                    <p class="movie-title">{{ movie[1] }}</p>
+                    <p>⭐ Rating: {{ movie[2] }}/10</p>
+                    <p>{{ movie[3] }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align: center;">No favorites saved yet. Search for movies and save some!</p>
+    {% endif %}
+</body>
+</html>
