@@ -1,3 +1,4 @@
 *.env
+movies.db
 __pychache__/
 *.pyc
